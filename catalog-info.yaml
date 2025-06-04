@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: java-quarkus-kbcbafbm-gitops
+  description: This is GitOps manifest for java-quarkus-kbcbafbm   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=java-quarkus-kbcbafbm
+    backstage.io/kubernetes-id: java-quarkus-kbcbafbm 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: xjiangorg/java-quarkus-kbcbafbm-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:java-quarkus-kbcbafbm
